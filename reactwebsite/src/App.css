@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.flex-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px 2em;
+  text-indent: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex-container :first-child {
+  color:white;
+  font-size: 25px;
+  border: 10px solid green;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flex-container :first-child h1 {
+  color: red;
+  border: none
 }
 
+.flex-container :first-child p {
+  font-size: 20px;
+  border: none
+}
+
+.flex-container :nth-child(2) {
+  color:white;
+  font-size: 25px;
+  border: 10px solid green
+
+}
+
+.flex-container :nth-child(2) h1 {
+  color: red;
+  border: none;
+}
+
+.flex-container :nth-child(2) p {
+  font-size: 20px;
+  border: none;
+}
+
+.flex-container :nth-child(3) {
+  color:white;
+  font-size: 25px;
+  border: 10px solid green;
+}
+
+.flex-container :nth-child(3) h1 {
+  color: red;
+  border: none;
+}
+
+.flex-container :nth-child(3) p {
+  font-size: 20px;
+  border: none;
+}
+
+body {
+  background-color: #282c34
+}
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color:white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  font-size: 20px;
+  text-indent: 20px;
 }

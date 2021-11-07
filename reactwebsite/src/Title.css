@@ -1,0 +1,13 @@
+
+.Title {
+    font-size: 30px;
+    color:white;
+    text-align: center;
+    text-indent: 150px;
+}
+
+.Title-element { 
+    position: relative; 
+    bottom: 10px; 
+   } 
+   
