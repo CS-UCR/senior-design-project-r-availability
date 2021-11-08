@@ -1,12 +1,15 @@
-
 import React from 'react';
-import ReactDOM, { render } from 'react-dom';
+import Navbar from '../components/Navbar';
+import './About.css';
 
 function About() {
   return (
-    <div>
-      <h3>Other</h3>
-    </div>
+    <>
+      <Navbar />
+      <div>
+      Explaination about the project coming soon
+      </div>
+    </> 
   )
 }
 

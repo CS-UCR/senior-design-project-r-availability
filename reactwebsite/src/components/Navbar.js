@@ -8,11 +8,11 @@ function Navbar() {
     <ul>
 
     <li>
-      <Link to="/About">About</Link>
+      <Link to="/About" replace>About</Link>
     </li>
 
     <li>
-      <Link to="/">Home</Link>
+      <Link to='/'>Home</Link>
     </li>
 
 
