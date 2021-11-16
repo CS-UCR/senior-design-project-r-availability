@@ -1,0 +1,69 @@
+.flex-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px 2em;
+  text-indent: 50px;
+}
+
+.flex-container :first-child {
+  color:white;
+  font-size: 25px;
+  border: 10px solid green;
+
+}
+
+.flex-container :first-child h1 {
+  color: red;
+  border: none
+}
+
+.flex-container :first-child p {
+  font-size: 20px;
+  border: none
+}
+
+.flex-container :nth-child(2) {
+  color:white;
+  font-size: 25px;
+  border: 10px solid green
+
+}
+
+.flex-container :nth-child(2) h1 {
+  color: red;
+  border: none;
+}
+
+.flex-container :nth-child(2) p {
+  font-size: 20px;
+  border: none;
+}
+
+.flex-container :nth-child(3) {
+  color:white;
+  font-size: 25px;
+  border: 10px solid green;
+}
+
+.flex-container :nth-child(3) h1 {
+  color: red;
+  border: none;
+}
+
+.flex-container :nth-child(3) p {
+  font-size: 20px;
+  border: none;
+}
+
+body {
+  background-color: #282c34
+}
+
+.App-header {
+  color:white;
+}
+
+.App {
+  font-size: 20px;
+  text-indent: 20px;
+}
