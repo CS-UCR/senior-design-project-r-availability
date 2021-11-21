@@ -50,9 +50,10 @@ int P_tick(int state){//function to change room count
 			}
 			break;
 	}
+	return state;
 }
 int C_tick(int state){//function to make api call to mongodb
-
+	return state;
 }
 
 int main(){
@@ -64,42 +65,25 @@ int main(){
 	bool track=true;
 	int direct_start=-1;//0 entering 1 exiting
 	task *tasks[]={&task1,&task2};
+	int numtasks=2;
 	task1.state=PSM_wait;
 	task1.period=1;
 	task1.elapsedTime=task1.period;
-	task1.TickFct=&I_tick;
-	task2	
-	while(track){
-		if(direct_start==-1){
-			if(digitalRead(24)==broken){
-				direct_start=1;
-				cout<<"24 broken\n";
-				}
-			else if(digitalRead(27)==broken){
-				cout<<"27 broken\n";
-				direct_start=0;
+	task1.TickFct=&P_tick;
+	task2.state=CSM_wait;
+	task2.period=500;
+	task2.elapsedTime=task2.period;
+	task2.TickFct=&C_tick;	
+	while(true){
+		int temp=occupants;
+		for(int i=0;i<numtasks;i++){
+			if(tasks[i]->elapsedTime==tasks[i]->period){
+				tasks[i]->state=tasks[i]->TickFct(tasks[i]->state);
+				tasks[i]->elapsedTime=0;
 			}
+			tasks[i]->elapsedTime++;
 		}
-		else if(direct_start==0){
-			if(digitalRead(27)==connected){
-				cout<<"Reconnected\n";
-				direct_start=-1;
-			}
-			if(digitalRead(24)==broken){
-				track=false;
-			}
-		}
-		else if(direct_start==1){
-			if(digitalRead(24)==connected){
-				cout<<"Reconnected\n";
-				direct_start=-1;
-			}
-			if(digitalRead(27)==broken)
-				track=false;
-		}
-
+		if(occupants!=temp)cout<<occupants<<endl;
 		delay(1);
 	}
-	if(direct_start==0)cout<<"Exiting";
-	else if(direct_start==1)cout<<"Entering";
 }
