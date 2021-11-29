@@ -1,15 +1,15 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Title from '../Title';
 import './About.css';
 
 function About() {
   return (
-    <>
+    <div>
       <Navbar />
-      <div>
-      Explaination about the project coming soon
-      </div>
-    </> 
+      <Title />
+      <p>Explaination about the project coming soon</p>
+    </div> 
   )
 }
 
