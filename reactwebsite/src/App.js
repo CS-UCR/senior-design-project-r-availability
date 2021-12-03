@@ -1,13 +1,38 @@
-import React from "react";
+import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from "./pages/Home"
+import About from "./pages/About"
+import {Container} from '@material-ui/core';
+
+function App() {
+  return (
+    <div className="App">
+      <Container maxWidth="lg">
+      <Router>
+        <Switch>
+          <Route path="/About"><About /></Route>
+          <Route path="/"><Home /></Route>
+        </Switch>
+      </Router>
+      </Container>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+/*import React from "react";
 
 // We use Route in order to define the different routes of our application
 import { Route } from "react-router-dom";
 
 // We import all the components we need in our app
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 import Edit from "./components/edit";
 import Create from "./components/create";
-import RecordList from "./components/recordlist";
+import RecordList from "./components/recordList";
 
 const App = () => {
   return (
@@ -24,4 +49,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App;*/

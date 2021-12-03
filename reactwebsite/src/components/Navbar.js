@@ -1,4 +1,31 @@
-import React from "react";
+import React from 'react';
+import './Navbar.css';
+import {Link} from "react-router-dom";
+
+function Navbar() {
+  return (
+  <div>
+    <ul>
+
+    <li>
+      <Link to="/About" replace>About</Link>
+    </li>
+
+    <li>
+      <Link to='/'>Home</Link>
+    </li>
+
+
+    </ul>
+  </div>
+  );
+}
+
+
+export default Navbar;
+
+
+/*import React from "react";
  
 // We import bootstrap to make our application look better.
 import "bootstrap/dist/css/bootstrap.css";
@@ -40,4 +67,4 @@ const Navbar = () => {
   );
 };
  
-export default Navbar;
+export default Navbar; */
