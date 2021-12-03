@@ -7,6 +7,11 @@ function Navbar() {
   <div>
     <ul>
 
+
+    <li>
+      <Link to="/recordList" replace>Records</Link>
+    </li>
+
     <li>
       <Link to="/About" replace>About</Link>
     </li>

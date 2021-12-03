@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from "./pages/Home"
 import About from "./pages/About"
+import RecordList from "./components/recordList";
 import {Container} from '@material-ui/core';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Container maxWidth="lg">
       <Router>
         <Switch>
+          <Route path="/RecordList"><RecordList/> </Route>
           <Route path="/About"><About /></Route>
           <Route path="/"><Home /></Route>
         </Switch>
