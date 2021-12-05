@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // This will require to npm install axios
 import axios from 'axios';
-import Navbar from '../components/Navbar';
+import Navbar from './Navbar';
 import Title from '../Title';
 //import { Link } from "react-router-dom";
 
