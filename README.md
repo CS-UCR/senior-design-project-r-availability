@@ -1,69 +1,55 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=5826821&assignment_repo_type=AssignmentRepo)
-# CS178A-B-Template
+# CS178-R-Availability 
 
 ## Table of Contents
 - [Overview](#overview)
+- [Team](#team)
 - [Usage](#usage)
-- [How To Run](#how-to-run)
 - [Diagrams](#diagrams)
 - [Dependencies](#dependencies)
 
 ## Overview
-<Include project description?
+R'Availability allows any UCR student and faculty to see the occupancy of selected locations at UCR. Through the website, the user is able to see the total occupancy of a given location and how occupied a location is. This project uses motion detectors installed at the doors to gather data on room occupancy.
 
 ## Team
-<a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum </a>
+- <a href="https://github.com/msalloum" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1790819?s=400&v=4" align="left" height="30px">Mariam Salloum </a>
+
+- <a href = "https://github.com/shubham-batra" target="_blank">Shubham Batra</a>
+
+- <a href = "https://github.com/ruiz-jorge" target="_blank">Jorge Ruiz</a>
+
+- <a href = "https://github.com/tgustafson2" target="_blank">Thomas Gustafson</a>
+
+- <a href = "https://github.com/XiaoFan-UCR-CompEngr" target="_blank">Xiao Fan</a>
+
 
 ## Usage
-Demo: <Link to youtube video>
+
+To run the application, git clone the current project and cd into the reactwebsite folder in one terminal and websiteserver folder in another terminal. In the reactwebsite folder, type 'npm start'. In the websiteserver folder, type 'nodemon server.js'. After this, the website will open up on localhost:3000.
 
 <Screenshot of application>
-
-## How To Run
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
+  
 ## Diagrams
+ 
+![image](https://user-images.githubusercontent.com/19676276/144738029-82062485-f564-4237-9b74-bce7f1173abc.png)
 
-Sequence Diagram
-
-Frontend Structure
-
-
-Overall System Diagram
-
+  
 ## Dependencies
-Install Node Package Manager (npm). [Helpful Documentation](https://www.npmjs.com/get-npm)
+- Frontend:
+  - @material-ui/core: v4.12.3
+  - @testing-library/jest-dom: v5.14.1
+  - @testing-library/react: v11.2.7
+  - @testing-library/user-event: v12.8.3
+  - axios: v0.24.0
+  - bootstrap: v5.1.3
+  - react: v17.0.2
+  - react-dom: v17.0.2
+  - react-router-dom: v5.3.0
+  - react-scripts: v4.0.3
+  - web-vitals: v1.1.2
+- Backend:
+  - cors: v2.8.5
+  - dotenv: v10.0.0
+  - express: v4.17.1
+  - mongodb: v4.2.0
+  
 
