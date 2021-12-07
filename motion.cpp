@@ -1,5 +1,6 @@
 #include <iostream>
 #include "wiringPi.h"
+#include <ctime>
 
 using namespace std;
 struct task{
@@ -34,6 +35,7 @@ int P_tick(int state){//function to change room count
 		case out2:
 			if (digitalRead(leftSensor) == connected && digitalRead(rightSensor) == connected) {
 				state = PSM_wait;
+				if (occupants>0)
 				occupants--;
 			}
 			break;
@@ -46,6 +48,7 @@ int P_tick(int state){//function to change room count
 		case in2:
 			if (digitalRead(rightSensor) == connected && digitalRead(leftSensor) == connected) {
 				state = PSM_wait;
+				if (occupants<total_chairs)
 				occupants++;
 			}
 			break;
@@ -53,6 +56,7 @@ int P_tick(int state){//function to change room count
 	return state;
 }
 int C_tick(int state){//function to make api call to mongodb
+	cout<<"Uploading to the database\n";
 	return state;
 }
 
@@ -63,6 +67,9 @@ int main(){
 	total_chairs=25;
 	occupants=0;
 	bool track=true;
+	/*time_t current=time(0);
+	tm *ltm=localtime(&current);
+	int cur=ltm->tm_min%15;//getting how many minutes it has been since the last 15 minute interval*/
 	int direct_start=-1;//0 entering 1 exiting
 	task *tasks[]={&task1,&task2};
 	int numtasks=2;
@@ -71,8 +78,8 @@ int main(){
 	task1.elapsedTime=task1.period;
 	task1.TickFct=&P_tick;
 	task2.state=CSM_wait;
-	task2.period=500;
-	task2.elapsedTime=task2.period;
+	task2.period=60000;
+	task2.elapsedTime=60000;
 	task2.TickFct=&C_tick;	
 	while(true){
 		int temp=occupants;
@@ -82,8 +89,15 @@ int main(){
 				tasks[i]->elapsedTime=0;
 			}
 			tasks[i]->elapsedTime++;
+			/*if(i==1){
+				current=time(0);
+				ltm=localtime(&current);
+				cur=ltm->tm_min%15;
+				if(ltm->tm_sec%60==0)
+				tasks[i]->elapsedTime=cur*60000;
+			}*/
 		}
-		if(occupants!=temp)cout<<occupants<<endl;
+		if(occupants!=temp)cout<<"There are "<<occupants<<" occupants\n"<<"There are "<<total_chairs<<" chairs\n";
 		delay(1);
 	}
 }
