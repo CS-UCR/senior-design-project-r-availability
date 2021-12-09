@@ -1,0 +1,17 @@
+
+body {
+    color:rgb(5, 3, 3);
+}
+img{
+    height: 700px;
+    bottom: 300px;
+    left:auto;
+    right: auto;
+  }
+button{
+border-start-end-radius: 10px;
+position: 'absolute';
+top:5000;
+bottom:1000px;
+height:50px;
+}
