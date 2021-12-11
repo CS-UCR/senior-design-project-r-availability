@@ -31,8 +31,8 @@ Installation of hardware will currently be executed by team. Team will place sen
 <Screenshot of application>
   
 ## Diagrams
- 
-![image](https://user-images.githubusercontent.com/19676276/144738029-82062485-f564-4237-9b74-bce7f1173abc.png)
+
+![image](https://user-images.githubusercontent.com/19676276/145661039-1b65827b-2401-4b71-a79f-557d5321aa7c.png)
 
   
 ## Dependencies
