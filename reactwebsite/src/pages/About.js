@@ -12,7 +12,7 @@ console.log('hello, highlanders, Lets check out where you want to go');
 
 
 function About() {
-  return (
+  return (  
     <>
        <div className="about">
       <h1> R'MAP</h1>
