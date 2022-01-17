@@ -14,7 +14,7 @@ function App() {
       <Container maxWidth="lg">
       <Router>
         <Switch>
-          <Route path="/RecordList"><RecordList/> </Route>
+          <Route path="/RecordAlist"><RecordList/> </Route>
           <Route path="/About"><About /></Route>
           <Route path="/Bytes"><Bytes/></Route>
           <Route path="/TTP"><TTP/></Route>
