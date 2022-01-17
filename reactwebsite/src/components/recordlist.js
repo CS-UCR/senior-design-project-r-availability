@@ -57,18 +57,18 @@ export default class RecordList extends Component {
     });
   }
 
-  // This following section will display the table with the records of individuals.
+  // This following section will display the table with the records of room occupancy.
   render() {
     return (
       <div>
         <Navbar />
         <Title />
-        <h3>Record List</h3>
+        <h2>Record List</h2>
         <table className="table table-striped" style={{ marginTop: 20, Width: 60}}>
           <thead>
             <tr>
-              <th>Room</th>
-              <th>Occupancy</th>
+              <th>Room&nbsp;</th>
+              <th>Occupancy&nbsp;</th>
               <th>Occupancy Status</th>
             </tr>
           </thead>

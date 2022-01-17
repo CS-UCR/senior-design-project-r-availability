@@ -10,26 +10,18 @@ return (
     <Title />
       <header className="App-header">
 	    <p>
-	    Information about various rooms are shown below
+	    <center>Click on a specific location to view the occupancy. At the moment, the only available places are Orbach, TTP, and Bytes.</center>
 	    </p>
       </header>
-      <div className="flex-container">
-
-        <div><h1>Bytes</h1>
-          <p>Occupancy: 4/30</p>
-          <p>Occupancy Status: Light</p>
-        </div>
-
-        <div><h1>TTP</h1>
-          <p>Occupancy: 12/30</p>
-          <p>Occupancy Status: Busy</p>
-        </div>
-
-        <div><h1>Other</h1>
-          <p>Occupancy: 12/30</p>
-          <p>Occupancy Status: Normal</p>
-      </div>
-
+      
+    <div className = "Clickable-Image">
+      <img src="UCRMAP3.jpg" alt="UCR MAP" usemap="#workmap" />
+      <map name="workmap">
+        <area shape="rect" coords="400,100,500,200" alt="Orbach" href="Orbach"/>
+        <area shape="rect" coords="350,20,400,80" alt="TTP" href="TTP"/>
+        <area shape="rect" coords="320,120,410,150" alt="Bytes" href="Bytes"/>
+        
+</map>
     </div>
 </div>
 )
