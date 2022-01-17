@@ -1,3 +1,6 @@
+
+/* Utilized CSS flex containers here */
+
 .flex-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -19,6 +22,7 @@
 
 .flex-container :first-child p {
   font-size: 20px;
+  color: black;
   border: none
 }
 
@@ -36,6 +40,7 @@
 
 .flex-container :nth-child(2) p {
   font-size: 20px;
+  color: black;
   border: none;
 }
 
@@ -52,15 +57,17 @@
 
 .flex-container :nth-child(3) p {
   font-size: 20px;
+  color: black;
   border: none;
 }
 
 body {
-  background-color: #282c34
+  /*background-color: #282c34 */
+  background-color: #eeeff1;
 }
 
 .App-header {
-  color:white;
+  color:black;
 }
 
 .App {

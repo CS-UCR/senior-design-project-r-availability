@@ -2,7 +2,10 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from "./pages/Home"
 import About from "./pages/About"
-import RecordList from "./components/recordlist";
+import Bytes from "./pages/Bytes"
+import TTP from "./pages/TTP"
+import Orbach from "./pages/Orbach"
+import RecordList from "./components/recordList";
 import {Container} from '@material-ui/core';
 
 function App() {
@@ -13,6 +16,9 @@ function App() {
         <Switch>
           <Route path="/RecordAlist"><RecordList/> </Route>
           <Route path="/About"><About /></Route>
+          <Route path="/Bytes"><Bytes/></Route>
+          <Route path="/TTP"><TTP/></Route>
+          <Route path="/Orbach"><Orbach/></Route>
           <Route path="/"><Home /></Route>
         </Switch>
       </Router>
