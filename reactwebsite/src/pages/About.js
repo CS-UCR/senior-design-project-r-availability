@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Title from '../Title';
 import './About.css';
 
+/* This is just the about page */
 function About() {
   return (
     <div>
