@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Title from '../Title';
-import RecordList from '../components/recordList';
 
 function Orbach() {
     return (

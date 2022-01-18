@@ -5,7 +5,7 @@ import About from "./pages/About"
 import Bytes from "./pages/Bytes"
 import TTP from "./pages/TTP"
 import Orbach from "./pages/Orbach"
-import RecordList from "./components/recordList";
+import RecordList from "./components/recordlist";
 import {Container} from '@material-ui/core';
 
 function App() {
