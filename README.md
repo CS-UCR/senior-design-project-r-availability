@@ -24,13 +24,15 @@ R'Availability allows any UCR student and faculty to see the occupancy of select
 
 ## Usage
 
-To run the application, git clone the current project and cd into the reactwebsite folder in one terminal and websiteserver folder in another terminal. In the reactwebsite folder, type 'npm start'. In the websiteserver folder, type 'nodemon server.js'. After this, the website will open up on localhost:3000.
+To run the application, clone the current project and open two terminals. Go into the reactwebsite directlry in one terminal and websiteserver directory in another terminal. In the terminal where the reactwebsite directory is open, type 'npm start'. In the terminal where websiteserver directory is open, type 'nodemon server.js'. After this, the website will open up on localhost:3000.
+
+Installation of hardware will currently be executed by team. Team will place sensors and Raspberry Pi in location. Once setup the team will then enter command to run program for motion sensor.
 
 <Screenshot of application>
   
 ## Diagrams
- 
-![image](https://user-images.githubusercontent.com/19676276/144738029-82062485-f564-4237-9b74-bce7f1173abc.png)
+
+![image](https://user-images.githubusercontent.com/19676276/145661039-1b65827b-2401-4b71-a79f-557d5321aa7c.png)
 
   
 ## Dependencies

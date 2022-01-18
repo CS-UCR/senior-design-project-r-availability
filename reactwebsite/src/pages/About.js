@@ -1,11 +1,20 @@
+import { Container } from '@material-ui/core';
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Title from '../Title';
 import './About.css';
+import Title from '../Title';
+
+const handleClick = () =>
+{
+console.log('hello, highlanders, Lets check out where you want to go');
+}
+
 
 function About() {
-  return (
+  return (  
     <div>
+       <div className="about">
+      <h1> R'MAP</h1>
       <Navbar />
       <Title />
       <h2>
@@ -18,6 +27,12 @@ function About() {
                    Xiao Feng
       </p>
     </div> 
+
+      This page shows the map of UCR.
+      <img src="UCRMAP3.jpeg" alt="" ></img>
+      <button onClick={handleClick}>click me</button>
+      </div>
+    <div/> 
   )
 }
 
