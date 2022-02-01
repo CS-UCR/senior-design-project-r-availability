@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Bytes from "./pages/Bytes"
 import TTP from "./pages/TTP"
+import UserProfile from "./pages/UserProfile" 
 import Orbach from "./pages/Orbach"
 import RecordList from "./components/recordlist";
 import {Container} from '@material-ui/core';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/TTP"><TTP/></Route>
           <Route path="/Orbach"><Orbach/></Route>
           <Route path="/"><Home /></Route>
+          <Route path="/UserProfile"><UserProfile/></Route> 
         </Switch>
       </Router>
       </Container>

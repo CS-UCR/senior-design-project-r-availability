@@ -20,6 +20,10 @@ function Navbar() {
       <Link to='/'>Home</Link>
     </li>
 
+    <li>
+      <Link to='/UserProfile'>UserProfile</Link>
+    </li>
+
 
     </ul>
   </div>
