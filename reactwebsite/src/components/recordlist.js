@@ -1,9 +1,9 @@
 // This file is where we get the records from the MongoDB server by making an API call. 
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Navbar from './Navbar';
-import Title from '../Title';
+//import { Link } from "react-router-dom";
+import Navbar from '../components/Navbar/Navbar.js';
+//import Title from '../Title';
 
 const Record = (props) => (
   <tr>
@@ -18,7 +18,7 @@ const Record = (props) => (
 export default function RecordList() {
 
     const [records, setRecords] = useState([]);
-    
+
     // This method fetches the records from the database.
     useEffect(() => {
       async function getRecords() {
@@ -51,7 +51,7 @@ export default function RecordList() {
       });
     }
 
-    function ttpList() {
+    /*function ttpList() {
       return (
         <table className="table table-striped" style={{ marginTop: 20, Width: 60}}>
           <thead>
@@ -66,13 +66,12 @@ export default function RecordList() {
           <tbody>{recordList()}</tbody>
         </table>
       )
-    }
+    }*/
 
   // This following section will display the table with the records of room occupancy.
     return (
       <div>
-        <Navbar />
-        <Title />
+        <Navbar /> 
         <h2>Record List</h2>
         <table className="table table-striped" style={{ marginTop: 20, Width: 60}}>
           <thead>

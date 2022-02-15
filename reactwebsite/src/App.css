@@ -73,4 +73,12 @@ body {
 .App {
   font-size: 20px;
   text-indent: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

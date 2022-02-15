@@ -3,14 +3,47 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 const clientId = "366697594473-leq4i7b24a2okspfuihcl3lgsas5vqsr.apps.googleusercontent.com"
 
+
 function Login() {
 
+    const [loginData, setLoginData] = useState(
+        localStorage.getItem('loginData')
+          ? JSON.parse(localStorage.getItem('loginData'))
+          : null
+      );
+
+      const handleFailure = (result) => {
+        alert(result);
+      };
+    
+      const handleLogin = async (googleData) => {
+        const res = await fetch('/api/google-login', {
+          method: 'POST',
+          body: JSON.stringify({
+            token: googleData.tokenId,
+          }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+    
+     const data = await res.json();
+        setLoginData(data);
+        localStorage.setItem('loginData', JSON.stringify(data));
+      };
+
+      const handleLogout = () => {
+        localStorage.removeItem('loginData');
+        setLoginData(null);
+      };
     const [showloginButton, setShowloginButton] = useState(true);
     const [showlogoutButton, setShowlogoutButton] = useState(false);
+
     const onLoginSuccess = (res) => {
         console.log('Login Success:', res.profileObj);
         setShowloginButton(false);
         setShowlogoutButton(true);
+
     };
 
     const onLoginFailure = (res) => {
@@ -39,12 +72,12 @@ function Login() {
             { showlogoutButton ?
                 <GoogleLogout
                     clientId={clientId}
-                    buttonText="Sign Out"
+                    buttonText={"Sign Out " + clientId}
                     onLogoutSuccess={onSignoutSuccess}
                 >
                 </GoogleLogout> : null
             }
         </div>
-    );
+    ); 
 }
 export default Login;

@@ -14,7 +14,7 @@ const ObjectId = require("mongodb").ObjectId;
 
 // This section will help you get a list of all the records.
 recordRoutes.route("/record").get(function (req, res) {
-  let db_connect = dbo.getDb("employees");
+  let db_connect = dbo.getDb("occupancy");
   db_connect
     .collection("records")
     .find({})
@@ -23,6 +23,32 @@ recordRoutes.route("/record").get(function (req, res) {
       res.json(result);
     });
 });
+
+// This section will help you get a list of all records from 
+recordRoutes.route("/record").get(function (req, res) {
+  let db_connect = dbo.getDb("occupancy");
+  db_connect
+    .collection("records")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+// This section will help you get a list of all the records.
+recordRoutes.route("/Orbach").get(function (req, res) {
+  let db_connect = dbo.getDb("occupancy");
+  db_connect
+    .collection("Orbach")
+    .find({})
+    .toArray(function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+});
+
+
 
 // This section will help you get a single record by id
 recordRoutes.route("/record/:id").get(function (req, res) {
@@ -35,6 +61,7 @@ recordRoutes.route("/record/:id").get(function (req, res) {
         res.json(result);
       });
 });
+
 
 // This section will help you create a new record.
 recordRoutes.route("/record/add").post(function (req, response) {
