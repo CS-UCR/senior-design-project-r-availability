@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+//import Navbar from '../components/Navbar';
 import Title from '../Title';
-import RecordList from '../components/recordlist';
+//import RecordList from '../components/recordlist';
 
 function TTP() {
     return (
       <div>
-        <Navbar />
+        {/*<Navbar /> */}
         <Title />
       </div> 
     )

@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+//import Navbar from '../components/Navbar';
 import Title from '../Title';
 
 function Orbach() {
     return (
       <div>
-        <Navbar />
+        {/*<Navbar /> */}
         <Title />
         
         <div className="flex-container">
