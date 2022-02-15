@@ -9,18 +9,8 @@ import Orbach from "./pages/Orbach"
 import Landing from "./pages/landing"
 import RecordList from "./components/recordlist";
 import {Container} from '@material-ui/core';
-import {useState, useEffect} from "react";
-import Axios from "axios" 
 
 function App() {
-  const [listOfUsers, setListOfUsers] = useState([]);
-
-  useEffect(() => {
-      Axios.get("/getTTP").then((response) =>  {
-        setListOfUsers(response.data) 
-      })
-  }, []);
-
   return (
     <div className="App">
       <Container maxWidth="lg">
@@ -37,18 +27,9 @@ function App() {
         </Switch>
       </Router>
       </Container>
-      <div className="usersDisplay">
-          {listOfUsers.map((TTP) => {
-            return (
-              <div> 
-                <h1>Occupancy: {TTP.occupancy} </h1>
-              </div>
-            );
-          })}
-      </div>
+      
     </div>
   );
 }
 
 export default App;
-

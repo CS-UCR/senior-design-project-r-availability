@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const TTPSchema = new mongoose.Schema({
+const OrbachSchema = new mongoose.Schema({
   occupancy: {
     type: Number,
     required: true,
@@ -15,5 +15,5 @@ const TTPSchema = new mongoose.Schema({
   },
 });
 
-const TTPModel = mongoose.model("TTP", TTPSchema, 'TTP');
-module.exports = TTPModel;
+const OrbachModel = mongoose.model("Orbach", OrbachSchema, 'Orbach');
+module.exports = OrbachModel;

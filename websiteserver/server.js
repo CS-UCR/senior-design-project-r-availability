@@ -2,29 +2,60 @@
 // This file uses 4 different libraries (mongodb, express, cors, dotenv)
 // Basically, this file is requiring express and cors to be used. 
 
-
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose')
 const TTPModel = require('./models/TTP')
+const OrbachModel = require('./models/Orbach')
+const BytesModel = require('./models/Bytes')
 const cors = require('cors')
 
 app.use(express.json());
-app.use(cors());
+var corsOptions = {
+    origin: "*",
+    credentials: true 
+};
+app.use(cors(corsOptions));
 
-mongoose.connect("mongodb+srv://ShubhamBatra:M%40gic2001@ravailability-database.dofjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
+mongoose.connect("mongodb+srv://ShubhamBatra:M%40gic2001@ravailability-database.dofjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
+
+// To get from TTP collection
 app.get("/getTTP", (req, res) => {
   TTPModel.find({}, (err, result) =>  {
     if (err) {
       res.json(error)
     } else {
-      console.log(`result ${result}`)
       res.json(result)
-      console.log(`Connection Successful!`);
+      console.log(`TTP connection successful!`);
     }
-  })
+  }).sort({ _id: -1 }).limit(1)
 })
+
+// To get from Orbach collection
+app.get("/getOrbach", (req, res) => {
+  OrbachModel.find({}, (err, result) =>  {
+    if (err) {
+      res.json(error)
+    } else {
+      res.json(result)
+      console.log(`Orbach connection successful!`);
+    }
+  }).sort({ _id: -1 }).limit(1)
+})
+
+// To get from Bytes collection
+app.get("/getBytes", (req, res) => {
+  BytesModel.find({}, (err, result) =>  {
+    if (err) {
+      res.json(error)
+    } else {
+      res.json(result)
+      console.log(`Bytes connection successful!`);
+    }
+  }).sort({ _id: -1 }).limit(1)
+})
+
 
 
 app.listen(5000, () => {
@@ -48,5 +79,5 @@ app.listen(port, () => {
     if (err) console.error(err);
  
   });
-  console.log(`Server is running on port: ${port}`);
+  console.log(Server is running on port: ${port});
 });*/
