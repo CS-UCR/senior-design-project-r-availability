@@ -24,7 +24,10 @@ R'Availability allows any UCR student and faculty to see the occupancy of select
 
 ## Usage
 
+The website is currently deployed and viewable at https://r-availability.herokuapp.com/
+
 To run the application, git clone the current project and cd into the reactwebsite folder in one terminal and websiteserver folder in another terminal. In the reactwebsite folder, type 'npm start'. In the websiteserver folder, type 'nodemon server.js'. After this, the website will open up on localhost:3000.
+
 
 <Screenshot of application>
   
@@ -51,5 +54,8 @@ To run the application, git clone the current project and cd into the reactwebsi
   - dotenv: v10.0.0
   - express: v4.17.1
   - mongodb: v4.2.0
+  - mongoose: v6.2.1
+  - nodemon: v2.0.15
+  - concurrently: v5.0.0
   
 
