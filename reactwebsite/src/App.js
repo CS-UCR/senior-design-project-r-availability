@@ -7,7 +7,8 @@ import TTP from "./pages/TTP"
 import Room from "./pages/Room"
 import Orbach from "./pages/Orbach"
 import Landing from "./pages/landing"
-import RecordList from "./components/recordlist";
+import UserProfile from "./pages/UserProfile"
+import LogoutButton from "./components/LogoutButton"
 import {Container} from '@material-ui/core';
 
 function App() {
@@ -16,13 +17,14 @@ function App() {
       <Container maxWidth="lg">
       <Router>
         <Switch>
-          <Route path="/RecordList"><RecordList/> </Route>
           <Route path="/About"><About /></Route>
           <Route path="/Bytes"><Bytes/></Route>
           <Route path="/TTP"><TTP/></Route>
           <Route path="/Orbach"><Orbach/></Route>
           <Route path="/Room"><Room/></Route>
           <Route path="/Home"><Home /></Route>
+          <Route path="/UserProfile"><UserProfile /></Route>
+          <Route path="/LogoutButton"><LogoutButton /></Route>
           <Route path="/"><Landing /></Route>
         </Switch>
       </Router>

@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar.js';
-//import Title from '../Title';
 import './About.css';
 
 /* This is just the about page */

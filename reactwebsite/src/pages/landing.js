@@ -1,20 +1,19 @@
-  import React from "react";
-  import {Link } from "react-router-dom";
+import React from "react";
+//import {Link } from "react-router-dom";
+import LoginButton from '../components/LoginButton';
+import LogoutButton from '../components/LogoutButton';
+import Profile from '../components/Profile';
 
-    function Landing() {
 
-        return (
+  function Landing() {
+    return (
           <div>
               <h1><center>This is the R'Availability Landing Page</center></h1>
-            <center><Link to="/Home"><button>
-              Enter Website
-            </button>
-            </Link></center>
+              <center><LoginButton /></center>
+              <Profile />
           </div>
-        );
-
-    }
-
+    );
+  }
     export default Landing;
 
 
