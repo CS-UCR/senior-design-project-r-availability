@@ -59,9 +59,9 @@ app.get("/getBytes", (req, res) => {
 })
 
 // POST method route
-app.post('/userFavoriteRoom', (req, res) => {
+/*app.post('/userFavoriteRoom', (req, res) => {
   res.send('POST request to the homepage')
-})
+})*/
 
 //Not sure whether needed for deployment
 app.use(express.static('reactwebsite'));
