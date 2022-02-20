@@ -58,6 +58,11 @@ app.get("/getBytes", (req, res) => {
   }).sort({ _id: -1 }).limit(1)
 })
 
+// POST method route
+app.post('/userFavoriteRoom', (req, res) => {
+  res.send('POST request to the homepage')
+})
+
 //Not sure whether needed for deployment
 app.use(express.static('reactwebsite'));
 

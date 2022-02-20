@@ -1,15 +1,9 @@
-import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Bytes from "./pages/Bytes"
-import TTP from "./pages/TTP"
-import Room from "./pages/Room"
-import Orbach from "./pages/Orbach"
-import Landing from "./pages/landing"
-import UserProfile from "./pages/UserProfile"
+import './App.css'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Home, About, Bytes, TTP, Room, Orbach, Landing, UserProfile} from "./pages";
 import LogoutButton from "./components/LogoutButton"
-import {Container} from '@material-ui/core';
+import {Container} from '@material-ui/core'
+import PrivateRoute from "./components/PrivateRoute"
 
 function App() {
   return (
@@ -17,19 +11,18 @@ function App() {
       <Container maxWidth="lg">
       <Router>
         <Switch>
-          <Route path="/About"><About /></Route>
-          <Route path="/Bytes"><Bytes/></Route>
-          <Route path="/TTP"><TTP/></Route>
-          <Route path="/Orbach"><Orbach/></Route>
-          <Route path="/Room"><Room/></Route>
-          <Route path="/Home"><Home /></Route>
-          <Route path="/UserProfile"><UserProfile /></Route>
-          <Route path="/LogoutButton"><LogoutButton /></Route>
-          <Route path="/"><Landing /></Route>
+          <PrivateRoute exact path="/About" component={About}/>
+          <PrivateRoute exact path="/Bytes" component={Bytes}/>
+          <PrivateRoute exact path="/TTP" component={TTP}/>
+          <PrivateRoute exact path="/Orbach" component={Orbach}/>
+          <PrivateRoute exact path="/Room" component={Room}/>
+          <PrivateRoute exact path="/Home" component={Home}/>
+          <PrivateRoute exact path="/UserProfile" component={UserProfile}/>
+          <PrivateRoute exact path="/LogoutButton" component={LogoutButton}/>
+          <Route exact path="/"><Landing /></Route>
         </Switch>
       </Router>
       </Container>
-      
     </div>
   );
 }

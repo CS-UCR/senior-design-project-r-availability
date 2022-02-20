@@ -1,5 +1,3 @@
-import LogoutButton from "../LogoutButton";
-
 export const MenuItems = [
     {
         title: 'Home',
