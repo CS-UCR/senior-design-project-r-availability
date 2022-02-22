@@ -5,7 +5,7 @@ const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
   return (
-      <button class="button" onClick= {() => loginWithRedirect({redirectUri:'https://r-availability.herokuapp.com/home'}) }>
+      <button class="button" onClick= {() => loginWithRedirect({redirectUri:'http://localhost:3000/home'}) }>
         Log In
       </button>
   )
