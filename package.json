@@ -2,11 +2,10 @@
   "name": "package",
   "version": "1.0.0",
   "description": "- [Overview](#overview)\r - [Team](#team)\r - [Usage](#usage)\r - [Diagrams](#diagrams)\r - [Dependencies](#dependencies)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "cd websiteserver && node server.js",
-    "start": "cd reactwebsite && npm start"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
