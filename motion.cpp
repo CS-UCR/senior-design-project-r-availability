@@ -40,6 +40,12 @@ mongocxx::client conn {uri};
 mongocxx::database db = conn["myFirstDatabase"];
 mongocxx::collection coll = db["records"];
 task task1, task2;
+void reset(){occupants=0;}
+void update(int i){
+	if((i>0&&occupants<25)||(i<0&&occupants>1)){
+	occupants+=i;}
+}
+
 int P_tick(int state){//function to change room count
 	switch (state) { // transitions
 		case PSM_wait:
@@ -57,8 +63,7 @@ int P_tick(int state){//function to change room count
 		case out2:
 			if (digitalRead(leftSensor) == connected && digitalRead(rightSensor) == connected) {
 				state = PSM_wait;
-				if (occupants>0)
-				occupants--;
+				update(-1);
 			}
 			break;
 		case in1:
@@ -70,8 +75,7 @@ int P_tick(int state){//function to change room count
 		case in2:
 			if (digitalRead(rightSensor) == connected && digitalRead(leftSensor) == connected) {
 				state = PSM_wait;
-				if (occupants<total_chairs)
-				occupants++;
+				update(1);
 			}
 			break;
 	}
@@ -140,6 +144,8 @@ int main(){
 				else tasks[i]->elapsedTime=1000;
 				}
 			}
+			cur=ltm->tm_hour;
+			if(cur==0)reset();
 		}
 		if(occupants!=temp)cout<<"There are "<<occupants<<" occupants\n"<<"There are "<<total_chairs<<" chairs\n";
 		delay(1);
