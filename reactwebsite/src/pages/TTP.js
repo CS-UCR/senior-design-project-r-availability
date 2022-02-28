@@ -26,6 +26,12 @@ function TTP() {
                 <h1>Seats: {TTP.seats} </h1>
                 <h1>Time: {TTP.time} </h1>
                 <br></br>
+                <script type = "text/JavaScript">
+                  function AutoRefresh(t) {
+                    setTimeout("location.reload(true);", 5000)
+                  }
+              </script>
+              <body onload = "JavaScript:AutoRefresh(5000);"></body>
               </div>
             );
           })}
