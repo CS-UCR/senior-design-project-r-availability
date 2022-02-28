@@ -5,6 +5,8 @@ const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
 
 
+
+
   return (  
       isAuthenticated && (
       <div>

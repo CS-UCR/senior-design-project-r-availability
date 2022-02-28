@@ -10,7 +10,7 @@ function Bytes() {
         setListOfUsers(response.data) 
       }, error => {
           console.log(error)
-      } )
+      })
   }, []);
 
   return (
