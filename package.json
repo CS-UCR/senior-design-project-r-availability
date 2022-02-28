@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "install-client": "cd websiteserver && npm install",
+    "heroku-postbuild": "npm run install-websiteserver && npm run build"
   },
   "repository": {
     "type": "git",
