@@ -47,6 +47,40 @@ function About() {
       <p>
         image goes here
       </p>
+      <br></br>
+      <h2>
+        Dependencies
+      </h2>
+      <br></br>
+      <h3>
+        Front End
+      </h3>
+      <p>
+        @material-ui/core: v4.12.3 <br></br>
+        @testing-library/jest-dom: v5.14.1 <br></br>
+        @testing-library/react: v11.2.7 <br></br>
+        @testing-library/user-event: v12.8.3 <br></br>
+        axios: v0.24.0 <br></br>
+        bootstrap: v5.1.3 <br></br>
+        react: v17.0.2 <br></br>
+        react-dom: v17.0.2 <br></br>
+        react-router-dom: v5.3.0 <br></br>
+        react-scripts: v4.0.3 <br></br>
+        web-vitals: v1.1.2 <br></br>
+      </p>
+      <br></br>
+      <h3>
+        Backend
+      </h3>
+      <p>
+        cors: v2.8.5 <br></br>
+        dotenv: v10.0.0 <br></br>
+        express: v4.17.1 <br></br>
+        mongodb: v4.2.0 <br></br>
+        mongoose: v6.2.1 <br></br>
+        nodemon: v2.0.15 <br></br>
+        concurrently: v5.0.0 <br></br>
+      </p>
     </div> 
   )
 }
