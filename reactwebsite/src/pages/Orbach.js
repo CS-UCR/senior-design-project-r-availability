@@ -6,7 +6,7 @@ function Orbach() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-      Axios.get("http://localhost:5000/getOrbach").then((response) =>  {
+      Axios.get("https://r-availability.herokuapp.com/getOrbach").then((response) =>  {
         setListOfUsers(response.data) 
       }, error => {
           console.log(error)
