@@ -2,7 +2,6 @@ import React from "react";
 import LoginButton from '../components/LoginButton';
 import './landing.css';
 
-
   function Landing() {
     return (
           <div>
@@ -37,7 +36,7 @@ import './landing.css';
           </div>
           
     );
-  }
+    }
     export default Landing;
 
 

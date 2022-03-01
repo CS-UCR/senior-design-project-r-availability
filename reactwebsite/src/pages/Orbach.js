@@ -26,6 +26,12 @@ function Orbach() {
                 <h1>Seats: {Orbach.seats} </h1>
                 <h1>Time: {Orbach.time} </h1>
                 <br></br>
+                <script type = "text/JavaScript">
+                  function AutoRefresh(t) {
+                    setTimeout("location.reload(true);", 5000)
+                  }
+              </script>
+              <body onload = "JavaScript:AutoRefresh(5000);"></body>
               </div>
             );
           })}

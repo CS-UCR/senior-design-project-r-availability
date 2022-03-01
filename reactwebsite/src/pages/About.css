@@ -1,3 +1,15 @@
 body {
     color:black;
 }
+
+h1 {
+    text-indent: 0px;
+}
+h2 {
+    text-indent: 0px;
+}
+p {
+    color:black;
+    text-indent: 0px;
+    margin-left: 50px;
+}
