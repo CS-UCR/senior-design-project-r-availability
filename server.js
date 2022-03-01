@@ -1,5 +1,5 @@
 // Should be no need to change this file, from mern stack tutorial
-// This file uses 4 different libraries (mongodb, express, cors, dotenv)
+// This file uses 3 different libraries (mongoose, express, cors)
 // Basically, this file is requiring express and cors to be used. 
 
 const express = require("express");
@@ -8,6 +8,10 @@ const mongoose = require('mongoose')
 const TTPModel = require('./models/TTP')
 const OrbachModel = require('./models/Orbach')
 const BytesModel = require('./models/Bytes')
+const userFavoriteRoomModel = require('./models/userFavoriteRoom')
+
+const PORT = process.env.PORT || 5000; // Needed for deployment
+
 const cors = require('cors')
 const path = require('path');
 
@@ -58,16 +62,25 @@ app.get("/getBytes", (req, res) => {
   }).sort({ _id: -1 }).limit(1)
 })
 
-// POST method route
-/*app.post('/userFavoriteRoom', (req, res) => {
-  res.send('POST request to the homepage')
-})*/
+// For when user inputs their favorite room
+app.post("/postUserFavoriteRoom", async (req, res) => {
+  const email = req.body.email;
+  const favroom = req.body.favroom;
 
-//Not sure whether needed for deployment
-app.use(express.static('reactwebsite'));
+  const userFavoriteRoom = new userFavoriteRoomModel({email: email, favroom: favroom })
+  await userFavoriteRoom.save();
+  res.send("Success");
+});
+
+// Needed for deployment
+
+app.use(express.static(path.join(__dirname,'./reactwebsite/build/')));
+
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, './reactwebsite/build', 'index.html')); 
+}); 
 
 
-const PORT = process.env.PORT || 5000; // Needed for deployment
 app.listen(PORT, () => {
   console.log(`Server is running on port 5000`);
 });

@@ -6,7 +6,7 @@ function TTP() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-      Axios.get("http://localhost:5000/getTTP").then((response) =>  {
+      Axios.get("https://r-availability.herokuapp.com/getTTP").then((response) =>  {
         setListOfUsers(response.data) 
       }, error => {
           console.log(error)

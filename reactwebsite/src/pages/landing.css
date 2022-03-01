@@ -1,0 +1,51 @@
+
+.title {
+    font-size:30px;
+    text-align: left;
+}
+
+.flex-container {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+.flex-container2 {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box1 {
+    flex-wrap: wrap;
+    width: 45%;
+    font-size: 25px;
+}
+.UCRimage {
+    width: 1%; /* or any custom size */
+    height: 1%; 
+    object-fit: cover;
+}
+.box2 {
+    flex-wrap: wrap;
+    width:50%
+}
+.box3 {
+    flex-wrap: wrap;
+    width: 33%;
+    justify-content: center;
+}
+.box4 {
+    flex-wrap: wrap;
+    width: 33%;
+}
+.box5 {
+    flex-wrap: wrap;
+    width: 33%;
+}
+  
+  
+  

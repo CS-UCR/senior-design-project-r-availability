@@ -6,11 +6,11 @@ function Bytes() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-      Axios.get("http://localhost:5000/getBytes").then((response) =>  {
+      Axios.get("https://r-availability.herokuapp.com/getBytes").then((response) =>  {
         setListOfUsers(response.data) 
       }, error => {
           console.log(error)
-      } )
+      })
   }, []);
 
   return (

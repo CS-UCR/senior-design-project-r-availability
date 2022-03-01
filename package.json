@@ -2,11 +2,11 @@
   "name": "package",
   "version": "1.0.0",
   "description": "- [Overview](#overview)\r - [Team](#team)\r - [Usage](#usage)\r - [Diagrams](#diagrams)\r - [Dependencies](#dependencies)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "cd websiteserver && npm run dev",
-    "start": "cd reactwebsite && npm start"
+    "start": "node server.js",
+    "heroku-postbuild": "cd reactwebsite && npm install && npm run build"
+
   },
   "repository": {
     "type": "git",

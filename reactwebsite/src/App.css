@@ -1,7 +1,7 @@
 
 /* Utilized CSS flex containers here */
 
-.flex-container {
+/* .flex-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px 2em;
@@ -59,7 +59,7 @@
   font-size: 20px;
   color: black;
   border: none;
-}
+} */
 
 body {
   /*background-color: #282c34 */
@@ -75,7 +75,6 @@ body {
   text-indent: 20px;
   font-family: 'Montserrat', sans-serif;
 }
-
 
 * {
   box-sizing: border-box;
