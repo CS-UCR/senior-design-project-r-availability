@@ -6,7 +6,7 @@ function TTP() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-      Axios.get("http://localhost:5000/getTTP").then((response) =>  {
+      Axios.get("https://r-availability.herokuapp.com/getTTP").then((response) =>  {
         setListOfUsers(response.data) 
       }, error => {
           console.log(error)
@@ -26,6 +26,12 @@ function TTP() {
                 <h1>Seats: {TTP.seats} </h1>
                 <h1>Time: {TTP.time} </h1>
                 <br></br>
+                <script type = "text/JavaScript">
+                  function AutoRefresh(t) {
+                    setTimeout("location.reload(true);", 5000)
+                  }
+              </script>
+              <body onload = "JavaScript:AutoRefresh(5000);"></body>
               </div>
             );
           })}

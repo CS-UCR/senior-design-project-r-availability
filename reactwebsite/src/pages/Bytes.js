@@ -6,7 +6,7 @@ function Bytes() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-      Axios.get("http://localhost:5000/getBytes").then((response) =>  {
+      Axios.get("https://r-availability.herokuapp.com/getBytes").then((response) =>  {
         setListOfUsers(response.data) 
       }, error => {
           console.log(error)
@@ -26,6 +26,12 @@ function Bytes() {
                 <h1>Seats: {Bytes.seats} </h1>
                 <h1>Time: {Bytes.time} </h1>
                 <br></br>
+                <script type = "text/JavaScript">
+                  function AutoRefresh(t) {
+                    setTimeout("location.reload(true);", 5000)
+                  }
+              </script>
+              <body onload = "JavaScript:AutoRefresh(5000);"></body>
               </div>
             );
           })}

@@ -1,1 +1,1 @@
-web:cd reactwebsite && npm start
+web: npm start

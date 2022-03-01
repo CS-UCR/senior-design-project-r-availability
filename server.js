@@ -9,6 +9,9 @@ const TTPModel = require('./models/TTP')
 const OrbachModel = require('./models/Orbach')
 const BytesModel = require('./models/Bytes')
 const userFavoriteRoomModel = require('./models/userFavoriteRoom')
+
+const PORT = process.env.PORT || 5000; // Needed for deployment
+
 const cors = require('cors')
 const path = require('path');
 
@@ -69,11 +72,15 @@ app.post("/postUserFavoriteRoom", async (req, res) => {
   res.send("Success");
 });
 
-//Not sure whether needed for deployment
-app.use(express.static('reactwebsite'));
+// Needed for deployment
+
+app.use(express.static(path.join(__dirname,'./reactwebsite/build/')));
+
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, './reactwebsite/build', 'index.html')); 
+}); 
 
 
-const PORT = process.env.PORT || 5000; // Needed for deployment
 app.listen(PORT, () => {
   console.log(`Server is running on port 5000`);
 });
