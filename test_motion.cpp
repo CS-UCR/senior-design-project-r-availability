@@ -38,7 +38,7 @@ mongocxx::instance inst{};
 const auto uri = mongocxx::uri{"mongodb+srv://ShubhamBatra:M%40gic2001@ravailability-database.dofjv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"};
 mongocxx::client conn {uri};
 mongocxx::database db = conn["myFirstDatabase"];
-mongocxx::collection coll = db["TTP"];
+mongocxx::collection coll = db["Test"];
 task task1, task2;
 void reset(int &occupants){occupants=0;}
 void update(int i, int &occupants){
@@ -98,56 +98,3 @@ int C_tick(int state,int &occupants,int &total_chairs){//function to make api ca
 	return state;
 }
 
-int main(){
-	wiringPiSetup();
-	pinMode(leftSensor,INPUT);
-	pinMode(rightSensor,INPUT);
-	int total_chairs=25;
-	int occupants=0;
-	bool track=true;
-	time_t current=time(0);
-	tm *ltm=localtime(&current);
-	int cur=ltm->tm_min%15;//getting how many minutes it has been since the last 15 minute interval
-	int direct_start=-1;//0 entering 1 exiting
-	task *tasks[]={&task1,&task2};
-	int numtasks=2;
-	task1.state=PSM_wait;
-	task1.period=1;
-	task1.elapsedTime=task1.period;
-	task1.TickFct=&P_tick;
-	task2.state=CSM_wait;
-	task2.period=1000;
-	task2.elapsedTime=1000;
-	task2.TickFct=&C_tick;	
-	while(true){
-		int temp=occupants;
-		for(int i=0;i<numtasks;i++){
-			if(tasks[i]->elapsedTime==tasks[i]->period&i!=1){
-				tasks[i]->state=tasks[i]->TickFct(tasks[i]->state, occupants, total_chairs);
-				tasks[i]->elapsedTime=0;
-			}
-			if(i!=1)
-			tasks[i]->elapsedTime++;
-			if(i==1){
-				current=time(0);
-				ltm=localtime(&current);
-				cur=ltm->tm_min%2;//mod for time 15
-				if(cur==0){
-					//cout<<"checking if every two minutes\n";
-				if(ltm->tm_sec%60==0){
-					//cout<<"checking if start of minute\n";
-				if(tasks[i]->elapsedTime==1000){
-				tasks[i]->elapsedTime=0;
-				tasks[i]->state=tasks[i]->TickFct(tasks[i]->state,occupants,total_chairs);}
-				//else tasks[i]->elapsedTime=1000;
-				}
-				else tasks[i]->elapsedTime=1000;
-				}
-			}
-			cur=ltm->tm_hour;
-			if(cur==0)reset(occupants);
-		}
-		if(occupants!=temp)cout<<"There are "<<occupants<<" occupants\n"<<"There are "<<total_chairs<<" chairs\n";
-		delay(1);
-	}
-}
