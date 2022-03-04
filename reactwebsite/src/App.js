@@ -4,7 +4,6 @@ import {Home, About, Bytes, TTP, Room, Orbach, Landing, UserProfile} from "./pag
 import LogoutButton from "./components/LogoutButton"
 import {Container} from '@material-ui/core'
 import PrivateRoute from "./components/PrivateRoute"
-import { Auth0Provider } from '@auth0/auth0-react';
 
 function App() {
   return (

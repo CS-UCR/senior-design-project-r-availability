@@ -3,9 +3,9 @@ import './LoginButton.css';
 
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
-// When running locally, input 'http://localhost:5000/home as the redirectURI, otherwise, should be 'https://r-availability.herokuapp.com/home'
+// When running locally, input 'http://localhost:5000/home' as the redirectURI, otherwise, should be 'https://r-availability.herokuapp.com/home'
   return (
-      <button class="button" onClick= {() => loginWithRedirect({redirectUri:'https://r-availability.herokuapp.com/home'}) }>
+      <button class="button" onClick= {() => loginWithRedirect({redirectUri:'http://localhost:5000/home'}) }>
         Log In
       </button>
   )
