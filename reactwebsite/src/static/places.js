@@ -1,8 +1,8 @@
 const places = [
   {
-    title: 'Orbach',
+    title: "About R'avaibility",
     description:
-      "Study, read, and work on your things in Orbach library",
+      "Looking for a classroom to study but worry about remaining seats?  R'avaibility shows you everything about that room",
     imageUrl: process.env.PUBLIC_URL + '/assets/orbach.jpeg',
     time: 1500,
   },

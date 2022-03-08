@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/ucr2.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    
   },
 }));
 export default function Landing() {
@@ -21,7 +22,7 @@ export default function Landing() {
    <CssBaseline />
       <Header />
       <PlaceToVisit />
-      <LoginButton />
+      <center> <LoginButton /></center>
     </div>
   );
 }
