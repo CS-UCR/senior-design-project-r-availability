@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Landing() {
   const classes = useStyles();
   return (
+    
     <div className={classes.root}>
-   
    <CssBaseline />
       <Header />
       <PlaceToVisit />
