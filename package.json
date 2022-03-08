@@ -4,10 +4,9 @@
   "description": "- [Overview](#overview)\r - [Team](#team)\r - [Usage](#usage)\r - [Diagrams](#diagrams)\r - [Dependencies](#dependencies)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "install-client": "cd websiteserver && npm install",
-    "heroku-postbuild": "npm run install-websiteserver && npm run build"
+    "heroku-postbuild": "cd reactwebsite && npm install && npm run build"
+
   },
   "repository": {
     "type": "git",
