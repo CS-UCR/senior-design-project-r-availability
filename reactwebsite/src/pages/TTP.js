@@ -8,7 +8,7 @@ function TTP() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
   useEffect(() => {
-      Axios.get("http://localhost:5000/getTTP").then((response) =>  {
+      Axios.get("https://r-availability.herokuapp.com/getTTP").then((response) =>  {
         setListOfUsers(response.data) 
       }, error => {
           console.log(error)
@@ -24,7 +24,7 @@ function TTP() {
               <div> 
                 <h1>Current TTP Info - Updated every 15 minutes</h1>
                 <br></br>
-                <h1>Occupancy: {TTP.occupancy} </h1>
+                <h1>Occupancy: {TTP.occupancy}</h1>
                 <h1>Seats: {TTP.seats} </h1>
                 <h1>Time: {TTP.time} </h1>
                 <br></br>

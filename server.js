@@ -82,21 +82,13 @@ app.get("/getBytes", (req, res) => {
     return res.json({ msg: "Inserted user data into database" });
     });
     
-    
-
 // To get User info from database
-app.get("/getUserInfo", async (req, res) => {
+app.post("/getUserInfo", async (req, res) => {
   const email = req.body.email;
-  const user = await UsersModel.findOne({ email });
-  UsersModel.find({user}, (err, result) => {
-    if (err) {
-      res.json(error)
-    } else {
-      res.json(result)
-      console.log(`User info obtained from database`)
-    }
-  });
+  const Users = await UsersModel.findOne({ email });
+  res.json(Users);
 });
+
 
 // Below stuff for deployment
 app.use(express.static(path.join(__dirname,'./reactwebsite/build/')));
