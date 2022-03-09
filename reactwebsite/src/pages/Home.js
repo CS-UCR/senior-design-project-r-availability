@@ -1,14 +1,19 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar.js';
+import { useAuth0 } from "@auth0/auth0-react";
 import './Home.css';
 
+
 function Home() {
+  const { user } = useAuth0();
 return (
 <div>
   <Navbar />
     <br></br>
       <header className="App-header">
 	    <p>
+      <center>Welcome, {user.nickname}!</center>
+      <br></br>
 	    <center>Click on a specific location to view the occupancy. At the moment, the only available places are Orbach, TTP, and Bytes.</center>
 	    </p>
       </header>
@@ -27,13 +32,3 @@ return (
 }
 
 export default Home;
-
-
-<div className = "Clickable-Image">
-<img src="MAP3.jpg" alt="MAP" usemap="#workmap" />
-<map name="workmap">
-  <area shape="rect" coords="400,100,500,200" alt="Orb" href="Room" />
-  <area shape="rect" coords="350,20,400,80" alt="TTPH" href="Room"/>
-  <area shape="rect" coords="320,120,410,150" alt="Bull" href="Room"/>
-</map>
-</div>

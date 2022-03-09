@@ -2,6 +2,8 @@ import {useState, useEffect} from "react";
 import Axios from "axios" 
 import Navbar from '../components/Navbar/Navbar.js';
 
+// Locally, use "http://localhost:5000/getOrbach" instead of "https://r-availability.herokuapp.com/getOrbach"
+
 function Orbach() {
   const [listOfUsers, setListOfUsers] = useState([]);
 

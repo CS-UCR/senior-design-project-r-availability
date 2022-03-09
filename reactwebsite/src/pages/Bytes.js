@@ -2,9 +2,10 @@ import {useState, useEffect} from "react";
 import Axios from "axios" 
 import Navbar from '../components/Navbar/Navbar.js';
 
+// Locally, use "http://localhost:5000/getBytes" instead of "https://r-availability.herokuapp.com/getBytes"
+
 function Bytes() {
   const [listOfUsers, setListOfUsers] = useState([]);
-
   useEffect(() => {
       Axios.get("https://r-availability.herokuapp.com/getBytes").then((response) =>  {
         setListOfUsers(response.data) 
