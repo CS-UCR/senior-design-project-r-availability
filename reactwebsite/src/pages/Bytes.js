@@ -1,7 +1,12 @@
 import {useState, useEffect} from "react";
 import Axios from "axios" 
 import Navbar from '../components/Navbar/Navbar.js';
-
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 function Bytes() {
   const [listOfUsers, setListOfUsers] = useState([]);
 
@@ -20,18 +25,34 @@ function Bytes() {
           {listOfUsers.map((Bytes) => {
             return (
               <div> 
-                <h1>Current Bytes Info - Updated every 15 minutes</h1>
-                <br></br>
+          <Card sx={{ maxWidth: 1300 }}>
+               <CardActionArea>
+        <CardMedia
+          component="img"
+          height="250"
+          image= '/assets/bytess.jpeg'
+          alt="bytess.jpeg"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+          Current Bytes Info - Updated every 15 minutes
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
                 <h1>Occupancy: {Bytes.occupancy} </h1>
                 <h1>Seats: {Bytes.seats} </h1>
                 <h1>Time: {Bytes.time} </h1>
-                <br></br>
-                <script type = "text/JavaScript">
-                  function AutoRefresh(t) {
-                    setTimeout("location.reload(true);", 5000)
-                  }
-              </script>
-              <body onload = "JavaScript:AutoRefresh(5000);"></body>
+                </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+
+
+            <script type = "text/JavaScript">
+            function AutoRefresh(t) {
+              setTimeout("location.reload(true);", 5000)
+            }
+        </script>
+        <body onload = "JavaScript:AutoRefresh(5000);"></body>
               </div>
             );
           })}
