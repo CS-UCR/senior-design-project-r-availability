@@ -28,6 +28,8 @@ The website is currently deployed and viewable at https://r-availability.herokua
 
 To run the application, git clone the current project and cd into the reactwebsite folder in one terminal and websiteserver folder in another terminal. In the reactwebsite folder, type 'npm start'. In the websiteserver folder, type 'nodemon server.js'. After this, the website will open up on localhost:3000.
 
+For the hardware installation of sensors and RaspberryPi by the team are necessary for usage.
+
 
 <Screenshot of application>
   
@@ -57,5 +59,11 @@ To run the application, git clone the current project and cd into the reactwebsi
   - mongoose: v6.2.1
   - nodemon: v2.0.15
   - concurrently: v5.0.0
+- Hardware:
+  - Mongocxx v3.6.6
+  - Libmongoc v1.17.0
+  - C++17
+  - CMake v3.2
+  - GCC v11.2
   
 
