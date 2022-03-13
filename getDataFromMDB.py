@@ -17,16 +17,22 @@ ttp_col = db['TTP']
 # *NOTE: need to limit to only last 24 entries to reflect last 6 hours*
 ttp_df = pd.DataFrame(ttp_col.find())
 ttp_df = ttp_df[len(ttp_df)-24:]
+ttp_df = ttp_df.iloc[::-1]
 ttp_df = ttp_df.iloc[::4, :]
+ttp_df = ttp_df.iloc[::-1]
 
 
 orbach_df = pd.DataFrame(orbach_col.find())
 orbach_df = orbach_df[len(orbach_df)-24:]
+orbach_df = orbach_df.iloc[::-1]
 orbach_df = orbach_df.iloc[::4, :]
+orbach_df = orbach_df.iloc[::-1]
 
 bytes_df = pd.DataFrame(bytes_col.find())
 bytes_df = bytes_df[len(bytes_df)-24:]
+bytes_df = bytes_df.iloc[::-1]
 bytes_df = bytes_df.iloc[::4, :]
+bytes_df = bytes_df.iloc[::-1]
 
 # adding rooms to a list
 rooms = [ttp_df, orbach_df, bytes_df]
