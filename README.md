@@ -65,5 +65,5 @@ For the hardware installation of sensors and RaspberryPi by the team are necessa
   - C++17
   - CMake v3.2
   - GCC v11.2
-  
+  - GPIO v2.52
 
