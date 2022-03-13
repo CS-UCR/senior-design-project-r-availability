@@ -12,7 +12,6 @@ function Bytes() {
 
 // Locally, use "http://localhost:5000/getBytes" instead of "https://r-availability.herokuapp.com/getBytes"
 
-
   useEffect(() => {
       Axios.get("https://r-availability.herokuapp.com/getBytes").then((response) =>  {
         setListOfUsers(response.data) 
