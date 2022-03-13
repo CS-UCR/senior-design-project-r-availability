@@ -42,13 +42,13 @@ for room in rooms:
 
         # export plot as image and clear the plot
         if room.equals(ttp_df):
-            plt.savefig('reactwebsite/src/pages/ttp_occupancy.png')
+            plt.savefig('reactwebsite/public/ttp_occupancy.png')
             plt.clf()
         elif room.equals(orbach_df):
-            plt.savefig('reactwebsite/src/pages/orbach_occupancy.png')
+            plt.savefig('reactwebsite/public/orbach_occupancy.png')
             plt.clf()
         else:
-            plt.savefig('reactwebsite/src/pages/bytes_occupancy.png')
+            plt.savefig('reactwebsite/public/bytes_occupancy.png')
             plt.clf()
 
     # else if the collection is empty, create empty plot
@@ -61,13 +61,13 @@ for room in rooms:
 
         # export plot as image and clear the plot
         if room.equals(ttp_df):
-            plt.savefig('ttp_occupancy.png')
+            plt.savefig('reactwebsite/public/ttp_occupancy.png')
             plt.clf()
         elif room.equals(orbach_df):
-            plt.savefig('orbach_occupancy.png')
+            plt.savefig('reactwebsite/public/orbach_occupancy.png')
             plt.clf()
         else:
-            plt.savefig('bytes_occupancy.png')
+            plt.savefig('reactwebsite/public/bytes_occupancy.png')
             plt.clf()
 
 
