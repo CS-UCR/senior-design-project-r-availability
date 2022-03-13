@@ -50,6 +50,8 @@ function TTP() {
                 </CardContent>
               </CardActionArea>
             </Card>
+                <br></br>
+                <img src="ttp_occupancy.png" alt="TTP Room Occupancy"/>
                 <script type = "text/JavaScript">
                   function AutoRefresh(t) {
                     setTimeout("location.reload(true);", 15000)

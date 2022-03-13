@@ -48,7 +48,8 @@ function Bytes() {
                 </CardContent>
               </CardActionArea>
             </Card>
-
+          <br></br>
+         <img src="bytes_occupancy.png" alt="Bytes Room Occupancy"/>
 
             <script type = "text/JavaScript">
             function AutoRefresh(t) {
