@@ -48,31 +48,31 @@ void update(int i, int &occupants){
 
 int P_tick(int state, int &occupants, int &total_chairs){//function to change room count
 	switch (state) { // transitions
-		case PSM_wait:
+		case PSM_wait://inital state and waiting for input
 			if (digitalRead(leftSensor) == broken)
 				state = out1;
 			else if (digitalRead(rightSensor) == broken)
 				state = in1;
 			break;
-		case out1:
+		case out1://state for sensing movement out of room, leftsensor will be broken first
 			if (digitalRead(leftSensor) == broken && digitalRead(rightSensor) == broken)
 				state = out2;
 			else if (digitalRead(leftSensor) == connected && digitalRead(rightSensor) == connected)
 				state = PSM_wait;
 			break;
-		case out2:
+		case out2://state for updating count from movement leaving room
 			if (digitalRead(leftSensor) == connected && digitalRead(rightSensor) == connected) {
 				state = PSM_wait;
 				update(-1,occupants);
 			}
 			break;
-		case in1:
+		case in1://state for sensing movement into room, right sensor will be broken first
 			if (digitalRead(rightSensor) == broken && digitalRead(leftSensor) == broken)
 				state = in2;
 			else if (digitalRead(rightSensor) == connected && digitalRead(leftSensor) == connected)
 				state = PSM_wait;
 			break;
-		case in2:
+		case in2://state for updating count from movement into room
 			if (digitalRead(rightSensor) == connected && digitalRead(leftSensor) == connected) {
 				state = PSM_wait;
 				update(1,occupants);
