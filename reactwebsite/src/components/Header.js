@@ -50,14 +50,6 @@ export default function Header() {
   return (
     <div className={classes.root} id="header">
       <AppBar className={classes.appbar} elevation={0}>
-        <Toolbar className={classes.appbarWrapper}>
-          <h1 className={classes.appbarTitle}>
-            R'<span className={classes.colorText}>availability</span>
-          </h1>
-          <IconButton>
-            <SortIcon className={classes.icon} />
-          </IconButton>
-        </Toolbar>
       </AppBar>
 
       <Collapse
@@ -70,7 +62,7 @@ export default function Header() {
             Welcome to <br />
             R'<span className={classes.colorText}>availability</span>
           </h1>
-          <Scroll to="place-to-visit" smooth={true}>
+          <Scroll to="button" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.goDown} />
             </IconButton>
