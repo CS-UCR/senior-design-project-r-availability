@@ -69,15 +69,17 @@ app.get("/getBytes", (req, res) => {
   app.post("/insertUserInfo", async (req, res) => {
     const email = req.body.email;
     const message = req.body.message;
+    const favroom = req.body.favroom;
     const user = await UsersModel.findOne({ email });
     // If email already exists in database, update entry
     if (user) {
       user.message = message;
+      user.favroom = favroom;
       await user.save();
       return res.json({ msg: "User Data Updated" });
     }
     // Otherwise, simply create a new entry
-    const Users = new UsersModel({ email: email, message: message });
+    const Users = new UsersModel({ email: email, message: message, favroom: "none" });
     await Users.save();
     return res.json({ msg: "Inserted user data into database" });
     });

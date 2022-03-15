@@ -13,7 +13,10 @@ const UsersSchema = new mongoose.Schema({
       type: String,
       required: false
     },
-
+    favroom: {
+      type: String,
+      required: false
+    }
   });
   
   const UsersModel = mongoose.model("Users", UsersSchema, 'Users');

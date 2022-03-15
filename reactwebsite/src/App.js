@@ -8,7 +8,7 @@ import PrivateRoute from "./components/PrivateRoute"
 function App() {
   return (
     <div className="App">
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
       <Router>
         <Switch>
           <PrivateRoute exact path="/About" component={About}/>

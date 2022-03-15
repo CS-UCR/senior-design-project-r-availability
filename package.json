@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "cd reactwebsite && npm install && npm run build"
-
   },
   "repository": {
     "type": "git",
