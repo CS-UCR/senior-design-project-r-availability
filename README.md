@@ -38,8 +38,13 @@ For the hardware installation of sensors and RaspberryPi by the team are necessa
 <Screenshot of application>
   
 ## Diagrams
- 
-![image](https://user-images.githubusercontent.com/19676276/144738029-82062485-f564-4237-9b74-bce7f1173abc.png)
+
+System Diagram
+![image](https://raw.githubusercontent.com/CS-UCR/senior-design-project-r-availability/main/images/Tech%20Stack%20for%20Senior%20Design.png?token=GHSAT0AAAAAABQM6OSFGPCDT5OG5OQHEF2SYRZLAZA)
+  
+  
+Website Navigation Map
+![image](https://raw.githubusercontent.com/CS-UCR/senior-design-project-r-availability/main/images/Frame%201%20(2).png?token=GHSAT0AAAAAABQM6OSEFXN27S5YVDGAHAX6YRZLCAQ) 
 
   
 ## Dependencies
@@ -61,7 +66,7 @@ For the hardware installation of sensors and RaspberryPi by the team are necessa
   - @material-ui/icons: "^4.11.2
   - react-scroll": ^1.8.6
 - Backend:
-  - axios: v0.24.0
+  - axios: v0.24.0 
   - cors: v2.8.5
   - dotenv: v10.0.0
   - express: v4.17.1
